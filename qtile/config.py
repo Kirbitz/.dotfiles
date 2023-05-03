@@ -68,13 +68,7 @@ extension_defaults = widget_defaults.copy()
 
 # Bar colors
 def init_colors():
-    return [
-        ["#282a36", "#282a36"],
-        ["#FF0000", "#FF0000"],
-        ["#ffffff", "#ffffff"],
-        ["#000000", "#000000"],
-        ["#000000", "#000000"],
-    ]
+    return {"orange": "#DD5500", "cyan": "#29A8AB"}
 
 
 def create_right_bubble(fg, bg=None):
@@ -115,49 +109,49 @@ screens = [
         wallpaper_mode="stretch",
         top=bar.Bar(
             [
-                create_left_bubble("#DD5500", "#DD5500"),
+                create_left_bubble(colors["orange"], colors["orange"]),
                 widget.TextBox(
                     text="",
                     font="Hack Nerd Font",
                     padding=0,
                     fontsize=40,
-                    background="#DD5500",
+                    background=colors["orange"],
                 ),
-                create_right_bubble("#DD5500", "#29A8AB"),
+                create_right_bubble(colors["orange"], colors["cyan"]),
                 widget.GroupBox(
                     highlight_method="block",
-                    this_current_screen_border="#DD5500",
-                    background="#29A8AB",
+                    this_current_screen_border=colors["orange"],
+                    background=colors["cyan"],
                 ),
-                create_right_bubble("#29A8AB"),
+                create_right_bubble(colors["cyan"]),
                 widget.WindowName(),
-                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
-                # widget.StatusNotifier(),
-                create_left_bubble("#DD5500"),
+                create_left_bubble(colors["orange"]),
                 widget.ThermalSensor(
-                    fontsize=15, format=" {temp:.1f}{unit}", background="#DD5500"
+                    fontsize=15,
+                    format=" {temp:.1f}{unit}",
+                    background=colors["orange"],
                 ),
-                create_left_bubble("#29A8AB", "#DD5500"),
+                create_left_bubble(colors["cyan"], colors["orange"]),
                 widget.CPU(
                     fontsize=15,
                     format=" {freq_current}GHz {load_percent}%",
-                    background="#29A8AB",
+                    background=colors["cyan"],
                 ),
-                create_left_bubble("#DD5500", "#29A8AB"),
+                create_left_bubble(colors["orange"], colors["cyan"]),
                 widget.Memory(
                     fontsize=15,
                     format=" {MemUsed:.0f}{mm}/{MemTotal:.0f}{mm}",
                     measure_mem="G",
-                    background="#DD5500",
+                    background=colors["orange"],
                 ),
-                create_left_bubble("#29A8AB", "#DD5500"),
-                widget.Systray(background="#29A8AB"),
-                create_left_bubble("#DD5500", "#29A8AB"),
-                widget.Volume(fontsize=15, fmt=" {}", background="#DD5500"),
-                create_left_bubble("#29A8AB", "#DD5500"),
+                create_left_bubble(colors["cyan"], colors["orange"]),
+                widget.Systray(background=colors["cyan"]),
+                create_left_bubble(colors["orange"], colors["cyan"]),
+                widget.Volume(fontsize=15, fmt=" {}", background=colors["orange"]),
+                create_left_bubble(colors["cyan"], colors["orange"]),
                 widget.Battery(
                     fontsize=15,
-                    background="#29A8AB",
+                    background=colors["cyan"],
                     full_char="",
                     discharge_char=batter_discharge_icon(),
                     charge_char="",
@@ -166,14 +160,14 @@ screens = [
                     format="{char} {percent:2.0%}",
                     notify_below=20,
                 ),
-                create_left_bubble("#DD5500", "#29A8AB"),
+                create_left_bubble(colors["orange"], colors["cyan"]),
                 widget.Clock(
                     fontsize=13,
                     format="%Y-%m-%d %a %I:%M %p",
-                    background="#DD5500",
+                    background=colors["orange"],
                     margin=3,
                 ),
-                create_right_bubble("#DD5500", "FF6600"),
+                create_right_bubble(colors["orange"], "FF6600"),
             ],
             30,
             margin=[4, 6, 4, 6],
