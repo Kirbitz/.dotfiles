@@ -4,6 +4,7 @@ plug "zsh-users/zsh-autosuggestions"
 plug "zap-zsh/supercharge"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "chivalryq/git-alias"
+plug "hlissner/zsh-autopair"
 
 autoload -Uz vcs_info
 autoload -U colors && colors
