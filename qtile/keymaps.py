@@ -60,9 +60,29 @@ def init_keymaps(modKey):
             desc="Spawn a command using a prompt widget",
         ),
         # Volume Keys
-        Key([], "XF86AudioMute", lazy.spawn("amixer sset Master 1+ toggle")),
-        Key([], "XF86AudioLowerVolume", lazy.spawn("amixer sset Master 2%-")),
-        Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer sset Master 2%+")),
+        Key(
+            [],
+            "XF86AudioMute",
+            lazy.spawn("amixer sset Master 1+ toggle"),
+            desc="Unmutes the volume",
+        ),
+        Key(
+            [],
+            "XF86AudioLowerVolume",
+            lazy.spawn("amixer sset Master 2%-"),
+            desc="Decrease Volume by 2%",
+        ),
+        Key(
+            [],
+            "XF86AudioRaiseVolume",
+            lazy.spawn("amixer sset Master 2%+"),
+            desc="Increase Volume by 2%",
+        ),
         # Print screen key
-        Key([modKey, "shift"], "p", lazy.spawn("gnome-screenshot -i")),
+        Key(
+            [modKey, "shift"],
+            "p",
+            lazy.spawn("gnome-screenshot -i"),
+            desc="Opens Screenshot prompt",
+        ),
     ]
