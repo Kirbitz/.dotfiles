@@ -35,6 +35,7 @@ keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 keymap("v", "p", '"_dP', opts)
 
+-- Telescope Keymaps
 keymap(
 	"n",
 	"<leader>fs",
@@ -46,11 +47,21 @@ keymap("n", "<leader>fm", "<cmd>Telescope media_files<CR>", opts)
 keymap("n", "<leader>fr", "<cmd>Telescope repo list<CR>", opts)
 keymap("n", "<C-t>", "<cmd>Telescope live_grep<CR>", opts)
 
+-- Toggle Term Keymap
 keymap("t", "<C-j><C-k>", "<C-\\><C-n>", opts)
 
+-- Bufferline Keymaps
 keymap("n", "<leader>d", ":Bdelete<CR>", opts)
 keymap("n", "<leader>fd", ":Bdelete!<CR>", opts)
 
+-- Formatting keymap
 keymap("n", "<leader>p", ":Format<CR>", opts)
 
+-- Split window Keymap
 keymap("n", "<leader>v", ":vsplit<CR>", opts)
+
+-- Trouble Keymaps
+keymap("n", "<leader>tt", ":TroubleToggle<CR>", opts)
+
+-- Gitsigns keymaps
+keymap("n", "<leader>gd", ":Gitsigns diffthis<CR>", opts)
