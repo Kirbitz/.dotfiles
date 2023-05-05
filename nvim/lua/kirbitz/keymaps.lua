@@ -62,6 +62,7 @@ keymap("n", "<leader>v", ":vsplit<CR>", opts)
 
 -- Trouble Keymaps
 keymap("n", "<leader>tt", ":TroubleToggle<CR>", opts)
+keymap("n", "<leader>qf", ":TroubleToggle<CR>", opts)
 
 -- Gitsigns keymaps
 keymap("n", "<leader>gd", ":Gitsigns diffthis<CR>", opts)
