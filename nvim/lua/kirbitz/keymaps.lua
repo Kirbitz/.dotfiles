@@ -66,3 +66,10 @@ keymap("n", "<leader>qf", ":TroubleToggle<CR>", opts)
 
 -- Gitsigns keymaps
 keymap("n", "<leader>gd", ":Gitsigns diffthis<CR>", opts)
+
+-- Dap Keymaps
+keymap("n", "<leader>b", ":DapToggleBreakpoint<CR>", opts)
+keymap("n", "<F5>", ":DapContinue<CR>", opts)
+keymap("n", "<F10>", ":DapStepOver<CR>", opts)
+keymap("n", "<F11>", ":DapStepInto<CR>", opts)
+keymap("n", "<F12>", ":DapStepOut<CR>", opts)

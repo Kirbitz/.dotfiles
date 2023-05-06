@@ -88,6 +88,7 @@ return packer.startup(function(use)
 	-- DAP plugins
 	use("mfussenegger/nvim-dap")
 	use("jay-babu/mason-nvim-dap.nvim")
+	use("rcarriga/nvim-dap-ui")
 
 	-- Formatting
 	use("jose-elias-alvarez/null-ls.nvim")
