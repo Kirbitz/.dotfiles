@@ -85,6 +85,10 @@ return packer.startup(function(use)
 	use("neovim/nvim-lspconfig")
 	use("VonHeikemen/lsp-zero.nvim")
 
+	-- DAP plugins
+	use("mfussenegger/nvim-dap")
+	use("jay-babu/mason-nvim-dap.nvim")
+
 	-- Formatting
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("jay-babu/mason-null-ls.nvim")

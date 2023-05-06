@@ -4,7 +4,7 @@ if not indent_status_ok then
 	return
 end
 
-vim.g.indent_blankline_filetype_exclude = { "dashboard" }
+vim.g.indent_blankline_filetype_exclude = { "dashboard", "lspinfo", "packer", "checkhealth", "help", "man" }
 
 vim.cmd([[highlight IndentBlanklineIndent1 guifg=#4F000B gui=nocombine]])
 vim.cmd([[highlight IndentBlanklineIndent2 guifg=#720026 gui=nocombine]])
