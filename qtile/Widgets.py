@@ -50,7 +50,8 @@ def init_widgets(colors):
         ),
         create_left_bubble(colors["orange"], colors["cyan"]),
         widget.Memory(
-            fontsize=15,
+            font="Hack Nerd Font",
+            fontsize=17,
             format=" {MemUsed:.0f}{mm}/{MemTotal:.0f}{mm} ",
             measure_mem="G",
             background=colors["orange"],
@@ -58,7 +59,15 @@ def init_widgets(colors):
         create_left_bubble(colors["cyan"], colors["orange"]),
         widget.Systray(background=colors["cyan"]),
         create_left_bubble(colors["orange"], colors["cyan"]),
-        widget.Volume(fontsize=15, fmt=" {} ", background=colors["orange"]),
+        widget.Backlight(
+            backlight_name="acpi_video0",
+            brightness_file="/sys/class/backlight/intel_backlight/max_brightness",
+            font="Hack Nerd Font",
+            fontsize=17,
+            fmt=" {} ",
+            background=colors["orange"],
+        ),
+        widget.Volume(fontsize=17, fmt=" {} ", background=colors["orange"]),
         create_left_bubble(colors["cyan"], colors["orange"]),
         BatteryWrapper(
             format="{char} {percent:2.0%}",
@@ -70,12 +79,14 @@ def init_widgets(colors):
             background=colors["cyan"],
         ),
         widget.ThermalSensor(
-            fontsize=15,
-            format="   {temp:.1f}{unit} ",
+            font="Hack Nerd Font",
+            fontsize=17,
+            format="  {temp:.1f}{unit} ",
             background=colors["cyan"],
         ),
         create_left_bubble(colors["orange"], colors["cyan"]),
         widget.Clock(
+            font="Hack Nerd Font",
             fontsize=15,
             format=" %Y-%m-%d %a %I:%M %p",
             background=colors["orange"],
