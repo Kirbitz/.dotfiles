@@ -58,10 +58,11 @@ def init_widgets(colors):
         ),
         create_left_bubble(colors["cyan"], colors["orange"]),
         widget.Systray(background=colors["cyan"]),
+        widget.Sep(linewidth=10, background=colors["cyan"], foreground=colors["cyan"]),
         create_left_bubble(colors["orange"], colors["cyan"]),
         widget.Backlight(
-            backlight_name="acpi_video0",
-            brightness_file="/sys/class/backlight/intel_backlight/max_brightness",
+            brightness_file="/sys/class/backlight/intel_backlight/brightness",
+            max_brightness_file="/sys/class/backlight/intel_backlight/max_brightness",
             font="Hack Nerd Font",
             fontsize=17,
             fmt=" {} ",
