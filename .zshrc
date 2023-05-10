@@ -6,6 +6,11 @@ plug "zsh-users/zsh-syntax-highlighting"
 plug "chivalryq/git-alias"
 plug "hlissner/zsh-autopair"
 
+alias la=ls -a
+alias rm=rm -i
+alias mv=mv -i
+alias cp=cp -i
+
 autoload -Uz vcs_info
 autoload -U colors && colors
 
@@ -17,7 +22,7 @@ setopt prompt_subst
 
 
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
-# 
+
 +vi-git-untracked(){
     if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
         git status --porcelain | grep '??' &> /dev/null ; then
