@@ -1,5 +1,5 @@
 from libqtile import widget
-from BatteryWrapper import BatteryWrapper
+from WidgetWrapper import BatteryWrapper, VolumeWrapper, network
 
 widgets_defaults = dict(font="Hack Nerd Font", fontsize=15)
 
@@ -61,19 +61,23 @@ def init_widgets(colors):
         widget.Systray(background=colors["cyan"]),
         widget.Sep(linewidth=10, background=colors["cyan"], foreground=colors["cyan"]),
         create_left_bubble(colors["orange"], colors["cyan"]),
-        widget.Backlight(
-            brightness_file="/sys/class/backlight/intel_backlight/brightness",
-            max_brightness_file="/sys/class/backlight/intel_backlight/max_brightness",
-            fmt=" {} ",
-            background=colors["orange"],
-            **widgets_defaults,
-        ),
-        widget.Volume(
-            fmt=" {} ",
+        widget.GenPollText(
+            func=network,
             background=colors["orange"],
             **widgets_defaults,
         ),
         create_left_bubble(colors["cyan"], colors["orange"]),
+        widget.Backlight(
+            brightness_file="/sys/class/backlight/intel_backlight/brightness",
+            max_brightness_file="/sys/class/backlight/intel_backlight/max_brightness",
+            fmt=" {} ",
+            background=colors["cyan"],
+            **widgets_defaults,
+        ),
+        VolumeWrapper(
+            background=colors["cyan"],
+            **widgets_defaults,
+        ),
         BatteryWrapper(
             format="{char} {percent:2.0%}",
             show_short_text=False,
