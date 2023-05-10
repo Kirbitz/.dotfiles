@@ -1,7 +1,7 @@
 from libqtile import widget
 from WidgetWrapper import BatteryWrapper, VolumeWrapper, network
 
-widgets_defaults = dict(font="Hack Nerd Font", fontsize=13)
+widgets_defaults = dict(font="Hack Nerd Font", fontsize=14)
 
 
 def create_right_bubble(fg, bg=None):
