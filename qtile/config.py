@@ -61,7 +61,13 @@ layouts = [
 
 # Bar colors
 def init_colors():
-    return {"orange": "#DD5500", "cyan": "#29A8AB"}
+    return {
+        "orange": "#DD5500",
+        "cyan": "#29A8AB",
+        "red": "#ED2939",
+        "green": "#50C878",
+        "black": "#000000",
+    }
 
 
 colors = init_colors()

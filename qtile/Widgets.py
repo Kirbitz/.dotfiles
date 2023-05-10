@@ -28,21 +28,19 @@ def create_left_bubble(fg, bg=None):
 
 def init_widgets(colors):
     return [
-        create_left_bubble(colors["orange"], colors["orange"]),
-        widget.TextBox(
-            text="",
-            font="Hack Nerd Font",
-            padding=0,
-            fontsize=40,
-            background=colors["orange"],
+        widget.Sep(linewidth=5, background=colors["black"], foreground=colors["black"]),
+        widget.Image(
+            filename="~/.config/qtile/python-logo.png",
+            background=colors["black"],
+            margin=3,
         ),
-        create_right_bubble(colors["orange"], colors["cyan"]),
+        widget.Sep(linewidth=5, background=colors["black"], foreground=colors["black"]),
         widget.GroupBox(
             highlight_method="block",
             this_current_screen_border=colors["orange"],
-            background=colors["cyan"],
+            fontsize=14,
         ),
-        create_right_bubble(colors["cyan"]),
+        widget.Sep(linewidth=5, background=colors["black"], foreground=colors["black"]),
         widget.WindowName(),
         create_left_bubble(colors["orange"]),
         widget.GenPollText(
