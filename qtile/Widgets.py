@@ -1,7 +1,7 @@
 from libqtile import widget
 from WidgetWrapper import BatteryWrapper, VolumeWrapper, network
 
-widgets_defaults = dict(font="Hack Nerd Font", fontsize=15)
+widgets_defaults = dict(font="Hack Nerd Font", fontsize=13)
 
 
 def create_right_bubble(fg, bg=None):
@@ -38,11 +38,19 @@ def init_widgets(colors):
         widget.GroupBox(
             highlight_method="block",
             this_current_screen_border=colors["orange"],
-            fontsize=14,
+            fontsize=12,
         ),
         widget.Sep(linewidth=5, background=colors["black"], foreground=colors["black"]),
         widget.WindowName(),
-        create_left_bubble(colors["orange"]),
+        create_left_bubble(colors["cyan"]),
+        widget.CheckUpdates(
+            background=colors["cyan"],
+            custom_command="apt-show-versions -u -b",
+            distro="debian",
+            display_format="痢 {updates} pkgs ",
+            **widgets_defaults,
+        ),
+        create_left_bubble(colors["orange"], colors["cyan"]),
         widget.GenPollText(
             func=network,
             background=colors["orange"],
