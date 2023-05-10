@@ -21,22 +21,22 @@ while getopts 'npqz' OPTION; do
     n)
       echo "Setup NVIM"
       create_symlink "nvim" ".config/"
-      echo "SmLink Created NVIM"
+      echo "SymLink Created NVIM"
       ;;
     p)
       echo "Setup PICOM"
       create_symlink "picom" ".config/"
-      echo "SmLink Created PICOM"
+      echo "SymLink Created PICOM"
       ;;
     q)
       echo "Setup QTILE"
       create_symlink "qtile" ".config/"
-      echo "SmLink Created QTILE"
+      echo "SymLink Created QTILE"
       ;;
     z)
       echo "Setup ZSH"
       create_symlink ".zshrc"
-      echo "SmLink Created ZSH"
+      echo "SymLink Created ZSH"
       ;;
     ?)
       echo "Usage $0 [-n for NVIM] [-p for PICOM] [-q for QTILE] [-z for ZSH]"
