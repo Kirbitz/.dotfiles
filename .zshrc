@@ -6,10 +6,10 @@ plug "zsh-users/zsh-syntax-highlighting"
 plug "chivalryq/git-alias"
 plug "hlissner/zsh-autopair"
 
-alias la=ls -a
-alias rm=rm -i
-alias mv=mv -i
-alias cp=cp -i
+alias la="ls -a"
+alias rm="rm -i"
+alias mv="mv -i"
+alias cp="cp -i"
 
 autoload -Uz vcs_info
 autoload -U colors && colors
