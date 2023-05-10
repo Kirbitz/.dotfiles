@@ -1,6 +1,6 @@
 #!/bin/bash
 
-create_smlink() {
+create_symlink() {
   if [ -L "$HOME/$2$1" ]; then
     echo "Found Existing SmLink"
     rm -ir "$HOME/$2$1"
@@ -20,22 +20,22 @@ while getopts 'npqz' OPTION; do
   case "$OPTION" in
     n)
       echo "Setup NVIM"
-      create_smlink "nvim" ".config/"
+      create_symlink "nvim" ".config/"
       echo "SmLink Created NVIM"
       ;;
     p)
       echo "Setup PICOM"
-      create_smlink "picom" ".config/"
+      create_symlink "picom" ".config/"
       echo "SmLink Created PICOM"
       ;;
     q)
       echo "Setup QTILE"
-      create_smlink "qtile" ".config/"
+      create_symlink "qtile" ".config/"
       echo "SmLink Created QTILE"
       ;;
     z)
       echo "Setup ZSH"
-      create_smlink ".zshrc"
+      create_symlink ".zshrc"
       echo "SmLink Created ZSH"
       ;;
     ?)

@@ -2,7 +2,7 @@
 
 A repo to host all of my dotfile configs
 
-### Using smlinksetup
+## Using symlinksetup
 
 Setup File Flags
 
@@ -19,4 +19,8 @@ Once finished the setup will be all good to go
 
 #### **Example**
 
-    ./smlinksetup.sh -npqz
+    ./symlinksetup.sh -npqz
+
+If the setup file does not run on the first go then run
+
+    chmod x+ ./symlinksetup.sh
