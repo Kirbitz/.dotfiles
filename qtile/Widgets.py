@@ -1,6 +1,8 @@
 from libqtile import widget
 from BatteryWrapper import BatteryWrapper
 
+widgets_defaults = dict(font="Hack Nerd Font", fontsize=15)
+
 
 def create_right_bubble(fg, bg=None):
     return widget.TextBox(
@@ -44,17 +46,16 @@ def init_widgets(colors):
         widget.WindowName(),
         create_left_bubble(colors["cyan"]),
         widget.CPU(
-            fontsize=15,
             format=" {freq_current}GHz {load_percent}% ",
             background=colors["cyan"],
+            **widgets_defaults,
         ),
         create_left_bubble(colors["orange"], colors["cyan"]),
         widget.Memory(
-            font="Hack Nerd Font",
-            fontsize=17,
             format=" {MemUsed:.0f}{mm}/{MemTotal:.0f}{mm} ",
             measure_mem="G",
             background=colors["orange"],
+            **widgets_defaults,
         ),
         create_left_bubble(colors["cyan"], colors["orange"]),
         widget.Systray(background=colors["cyan"]),
@@ -63,35 +64,35 @@ def init_widgets(colors):
         widget.Backlight(
             brightness_file="/sys/class/backlight/intel_backlight/brightness",
             max_brightness_file="/sys/class/backlight/intel_backlight/max_brightness",
-            font="Hack Nerd Font",
-            fontsize=17,
             fmt=" {} ",
             background=colors["orange"],
+            **widgets_defaults,
         ),
-        widget.Volume(fontsize=17, fmt=" {} ", background=colors["orange"]),
+        widget.Volume(
+            fmt=" {} ",
+            background=colors["orange"],
+            **widgets_defaults,
+        ),
         create_left_bubble(colors["cyan"], colors["orange"]),
         BatteryWrapper(
             format="{char} {percent:2.0%}",
             show_short_text=False,
             low_percentage=0.25,
-            fontsize=17,
             update_interval=15,
-            font="Hack Nerd Font",
             background=colors["cyan"],
+            **widgets_defaults,
         ),
         widget.ThermalSensor(
-            font="Hack Nerd Font",
-            fontsize=17,
             format="  {temp:.1f}{unit} ",
             background=colors["cyan"],
+            **widgets_defaults,
         ),
         create_left_bubble(colors["orange"], colors["cyan"]),
         widget.Clock(
-            font="Hack Nerd Font",
-            fontsize=15,
             format=" %Y-%m-%d %a %I:%M %p",
             background=colors["orange"],
             margin=3,
+            **widgets_defaults,
         ),
         create_right_bubble(colors["orange"], "FF6600"),
     ]

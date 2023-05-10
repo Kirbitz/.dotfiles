@@ -59,11 +59,14 @@ def init_keymaps(modKey):
             ),
             desc="Spawn a command using a prompt widget",
         ),
+        # Brightness Keys
+        Key([], "XF86MonBrightnessUp", lazy.spawn("amixer sset Master toggle")),
+        Key([], "XF86MonBrightnessDown", lazy.spawn("amixer sset Master toggle")),
         # Volume Keys
         Key(
             [],
             "XF86AudioMute",
-            lazy.spawn("amixer sset Master 1+ toggle"),
+            lazy.spawn("amixer sset Master toggle"),
             desc="Unmutes the volume",
         ),
         Key(
