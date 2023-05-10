@@ -44,25 +44,31 @@ def init_widgets(colors):
         ),
         create_right_bubble(colors["cyan"]),
         widget.WindowName(),
-        create_left_bubble(colors["cyan"]),
-        widget.CPU(
-            format=" {freq_current}GHz {load_percent}% ",
+        create_left_bubble(colors["orange"]),
+        widget.Systray(background=colors["orange"]),
+        widget.Sep(
+            linewidth=10, background=colors["orange"], foreground=colors["orange"]
+        ),
+        create_left_bubble(colors["cyan"], colors["orange"]),
+        widget.GenPollText(
+            func=network,
             background=colors["cyan"],
             **widgets_defaults,
         ),
         create_left_bubble(colors["orange"], colors["cyan"]),
+        widget.CPU(
+            format=" {freq_current}GHz {load_percent}% ",
+            background=colors["orange"],
+            **widgets_defaults,
+        ),
         widget.Memory(
             format=" {MemUsed:.0f}{mm}/{MemTotal:.0f}{mm} ",
             measure_mem="G",
             background=colors["orange"],
             **widgets_defaults,
         ),
-        create_left_bubble(colors["cyan"], colors["orange"]),
-        widget.Systray(background=colors["cyan"]),
-        widget.Sep(linewidth=10, background=colors["cyan"], foreground=colors["cyan"]),
-        create_left_bubble(colors["orange"], colors["cyan"]),
-        widget.GenPollText(
-            func=network,
+        widget.ThermalSensor(
+            format=" {temp:.1f}{unit} ",
             background=colors["orange"],
             **widgets_defaults,
         ),
@@ -79,15 +85,10 @@ def init_widgets(colors):
             **widgets_defaults,
         ),
         BatteryWrapper(
-            format="{char} {percent:2.0%}",
+            format="{char} {percent:2.0%} ",
             show_short_text=False,
             low_percentage=0.25,
             update_interval=15,
-            background=colors["cyan"],
-            **widgets_defaults,
-        ),
-        widget.ThermalSensor(
-            format="  {temp:.1f}{unit} ",
             background=colors["cyan"],
             **widgets_defaults,
         ),
