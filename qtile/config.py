@@ -1,7 +1,7 @@
 import os
 import subprocess
 from libqtile import bar, layout, hook
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile.config import Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 import keymaps
 import Widgets
@@ -82,6 +82,7 @@ screens = [
             widgets_list,
             30,
             margin=[4, 6, 4, 6],
+            opacity=0.85,
         ),
     ),
 ]
