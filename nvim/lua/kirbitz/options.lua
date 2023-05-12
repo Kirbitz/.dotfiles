@@ -32,3 +32,5 @@ vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 vim.opt.termguicolors = true
 vim.opt.guifont = "CaskaydiaCove NFM"
+vim.opt.relativenumber = true
+vim.opt.cursorline = true
