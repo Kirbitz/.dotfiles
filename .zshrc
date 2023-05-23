@@ -6,10 +6,13 @@ plug "zsh-users/zsh-syntax-highlighting"
 plug "chivalryq/git-alias"
 plug "hlissner/zsh-autopair"
 
+export PATH=$PATH:/home/kirbitz/wyvern/bin
+export PATH=$PATH:/usr/local/zig
 export PATH=$PATH:/home/kirbitz/.nimble/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/usr/local/julia-1.6.7/bin
 source /home/kirbitz/.ghcup/env
+source /home/kirbitz/.sdkman/bin/sdkmain-init.sh
 
 
 alias la="ls -a"
@@ -45,3 +48,7 @@ PROMPT+="\$vcs_info_msg_0_ "
 neofetch --jp2a ~/Documents/logo/Kirby.jpg --colors 5 7 1 5 7 7
 
 [ -f "/home/kirbitz/.ghcup/env" ] && source "/home/kirbitz/.ghcup/env" # ghcup-env
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

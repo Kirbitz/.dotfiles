@@ -20,6 +20,7 @@ configs.setup({
 		"dart",
 		"gitignore",
 		"julia",
+		"ocaml",
 	},
 	sync_install = false,
 	ignore_install = { "" },
