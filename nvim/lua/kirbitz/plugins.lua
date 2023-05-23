@@ -124,6 +124,7 @@ return packer.startup(function(use)
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("mrjones2014/nvim-ts-rainbow")
 	use("lukas-reineke/indent-blankline.nvim")
+	use("hcnelson99/wyvern.vim")
 
 	-- Dashboard
 	use({
