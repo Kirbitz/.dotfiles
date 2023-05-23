@@ -6,6 +6,12 @@ plug "zsh-users/zsh-syntax-highlighting"
 plug "chivalryq/git-alias"
 plug "hlissner/zsh-autopair"
 
+export PATH=$PATH:/home/kirbitz/.nimble/bin
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/julia-1.6.7/bin
+source /home/kirbitz/.ghcup/env
+
+
 alias la="ls -a"
 alias rm="rm -i"
 alias mv="mv -i"
@@ -37,3 +43,5 @@ PROMPT="%B%F{magenta}[%F{white}$USERNAME%F{magenta}] % %(?:%{$fg_bold[green]%}ï°
 PROMPT+="\$vcs_info_msg_0_ "
 
 neofetch --jp2a ~/Documents/logo/Kirby.jpg --colors 5 7 1 5 7 7
+
+[ -f "/home/kirbitz/.ghcup/env" ] && source "/home/kirbitz/.ghcup/env" # ghcup-env

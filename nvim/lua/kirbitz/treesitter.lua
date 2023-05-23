@@ -5,7 +5,22 @@ if not status_ok then
 end
 
 configs.setup({
-	ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "rust", "python", "bash", "javascript" },
+	ensure_installed = {
+		"c",
+		"lua",
+		"vim",
+		"vimdoc",
+		"query",
+		"rust",
+		"python",
+		"bash",
+		"javascript",
+		"elixir",
+		"go",
+		"dart",
+		"gitignore",
+		"julia",
+	},
 	sync_install = false,
 	ignore_install = { "" },
 	autopairs = {
