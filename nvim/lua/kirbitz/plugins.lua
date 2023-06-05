@@ -107,8 +107,6 @@ return packer.startup(function(use)
 	use("akinsho/toggleterm.nvim")
 
 	-- Telescope
-	use("nvim-lua/popup.nvim")
-	use("nvim-lua/plenary.nvim")
 	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-media-files.nvim")
 	use("cljoly/telescope-repo.nvim")
@@ -137,12 +135,6 @@ return packer.startup(function(use)
 
 	-- markdown previews
 	use({ "tpope/vim-dispatch", opt = true, cmd = { "Dispatch", "Make", "Focus", "Start" } })
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = function()
-			vim.fn["mkdp#util#install"]()
-		end,
-	})
 	use({
 		"iamcco/markdown-preview.nvim",
 		run = "cd app && npm install",
